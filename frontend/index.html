@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>English Sing Along — aprende inglés cantando</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar" aria-label="Navegación principal">
+      <a class="brand" href="#/">
+        <img src="img/logo.svg" alt="" width="36" height="36" />
+        <span>English<br /><b>Sing Along</b></span>
+      </a>
+      <nav id="nav">
+        <a href="#/" data-route="home"><i>⌂</i><span>Inicio</span></a>
+        <a href="#/top" data-route="top"><i>★</i><span>Top 100 Global</span></a>
+        <a href="#/explorar" data-route="explore"><i>◎</i><span>Explorar</span></a>
+        <a href="#/buscar" data-route="search"><i>⌕</i><span>Buscar</span></a>
+        <a href="#/artistas" data-route="artists"><i>♪</i><span>Artistas</span></a>
+        <div class="nav-sep"></div>
+        <a href="#/favoritos" data-route="favorites"><i>♥</i><span>Favoritos</span></a>
+        <a href="#/listas" data-route="playlists"><i>☰</i><span>Mis listas</span></a>
+        <a href="#/historial" data-route="history"><i>↺</i><span>Historial</span></a>
+        <div class="nav-sep"></div>
+        <a href="#/aprender" data-route="learn"><i>✎</i><span>Aprender inglés</span></a>
+        <a href="#/ajustes" data-route="settings"><i>⚙</i><span>Configuración</span></a>
+      </nav>
+      <div id="server-status" class="server-status" title="Estado del servidor local"></div>
+    </aside>
+
+    <header id="topbar">
+      <button id="menu-btn" class="icon-btn only-mobile" aria-label="Abrir menú">☰</button>
+      <form id="search-form" role="search" autocomplete="off">
+        <span class="search-ico">⌕</span>
+        <input id="search-input" type="search" placeholder="Busca canciones, artistas, grupos, álbumes o géneros…" aria-label="Buscar" />
+        <div id="search-suggest" class="suggest" hidden></div>
+      </form>
+      <button id="add-btn" class="btn primary" title="Abrir un archivo local o un enlace de YouTube">＋ <span class="hide-sm">Abrir archivo o enlace</span></button>
+    </header>
+
+    <main id="view" tabindex="-1"></main>
+  </div>
+
+  <!-- Escenario de vídeo persistente: no se destruye al navegar -->
+  <div id="stage" class="stage hidden" aria-label="Vídeo">
+    <video id="media" playsinline preload="metadata"></video>
+    <div id="yt-host"></div>
+    <img id="stage-cover" alt="" />
+    <div id="stage-subs" class="stage-subs" aria-live="off"></div>
+    <button id="stage-expand" class="stage-btn" title="Abrir canción">⤢</button>
+  </div>
+
+  <footer id="playerbar" aria-label="Reproductor"></footer>
+  <div id="modal-root"></div>
+  <div id="toasts" aria-live="polite"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

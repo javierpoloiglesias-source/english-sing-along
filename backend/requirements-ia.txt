@@ -1,0 +1,6 @@
+# Inteligencia artificial local (gratuita y de código abierto).
+# Pesa bastante (~1-2 GB con PyTorch CPU que arrastra Argos/Stanza).
+faster-whisper>=1.0.3
+# PyAV 19 rompe faster-whisper 1.2.1 (argumento metadata_errors)
+av<19
+argostranslate>=1.9.6
